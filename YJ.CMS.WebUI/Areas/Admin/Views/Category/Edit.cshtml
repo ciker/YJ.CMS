@@ -1,0 +1,44 @@
+﻿@model YJ.CMS.Model.ViewModel.CategoryView
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/override.css" rel="stylesheet" />
+<h2>编辑类别</h2>
+@using (Html.BeginForm())
+{
+    <table class="list">
+        <tr>
+            <th>@Html.DisplayNameFor(c => c.c_type)</th>
+            <td>@Html.EditorFor(c => c.c_type)
+                <div class="w200">
+                    @Html.ValidationMessageFor(c => c.c_type)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayNameFor(c => c.c_title)</th>
+            <td>@Html.EditorFor(c => c.c_title)
+                <div class="w200">
+                    @Html.ValidationMessageFor(c => c.c_title)
+                </div>
+            </td>
+
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="编辑" />
+                @Html.ActionLink("返回列表页面", "Index")
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                @Html.ValidationSummary(true)
+            </td>
+        </tr>
+    </table>
+}

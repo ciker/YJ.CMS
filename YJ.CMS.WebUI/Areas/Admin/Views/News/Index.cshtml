@@ -1,0 +1,56 @@
+﻿@model IEnumerable<YJ.CMS.Model.ViewModel.NewsView>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section styles{
+    <link href="~/Content/pageBar.css" rel="stylesheet" />
+}
+<h2>新闻管理</h2>
+
+<p>
+    @Html.ActionLink("创建新闻", "Create")
+</p>
+<table class="list">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.n_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.n_title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.n_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.c_title)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.n_title)
+            </td>
+
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.n_id }) |
+            @Html.ActionLink("删除", "Delete", new { id = item.n_id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="page_nav">
+    @Html.PageNavigate((int)ViewBag.CurrentPage, 1, (int)ViewBag.TotalCount);
+</div>
+
+

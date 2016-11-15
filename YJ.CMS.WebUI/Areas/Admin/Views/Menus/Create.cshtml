@@ -1,0 +1,62 @@
+﻿@model YJ.CMS.Model.ViewModel.MenusView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>创建菜单</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+   <table>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.m_parent_mid)</td>
+            <td>@Html.TextBoxFor(model => model.m_parent_mid)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_parent_mid)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.m_name)</td>
+            <td>@Html.TextBoxFor(model => model.m_name)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_name)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.m_url)</td>
+            <td>@Html.TextBoxFor(model => model.m_url)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_url)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.m_sortid)</td>
+            <td>@Html.TextBoxFor(model => model.m_sortid)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_sortid)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.m_picname)</td>
+            <td>@Html.TextBoxFor(model => model.m_picname)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_picname)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.m_level)</td>
+            <td>@Html.TextBoxFor(model => model.m_level)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_level)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.m_remark)</td>
+            <td>@Html.TextAreaFor(model => model.m_remark)</td>
+            <td>@Html.ValidationMessageFor(model => model.m_remark)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align:center;"><input type="submit" value="保存" /></td>
+        </tr>
+
+    </table> 
+}

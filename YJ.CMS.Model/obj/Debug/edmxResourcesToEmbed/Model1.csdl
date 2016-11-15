@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserInfo" EntityType="Model1.UserInfo" />
+    <EntitySet Name="News" EntityType="Model1.News" />
+    <EntitySet Name="Contents" EntityType="Model1.Contents" />
+    <EntitySet Name="Category" EntityType="Model1.Category" />
+    <EntitySet Name="Product" EntityType="Model1.Product" />
+    <EntitySet Name="feedback" EntityType="Model1.feedback" />
+    <EntitySet Name="Menus" EntityType="Model1.Menus" />
+    <AssociationSet Name="FK_Contents_UserInfo" Association="Model1.FK_Contents_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Contents" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_UserInfo" Association="Model1.FK_News_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Category" Association="Model1.FK_News_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contents_Category" Association="Model1.FK_Contents_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Contents" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="Model1.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="u_name" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="u_pwd" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="real_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="u_telephone" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="u_email" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="u_is_lock" Nullable="false" />
+    <Property Type="DateTime" Name="u_add_time" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Contents" Relationship="Model1.FK_Contents_UserInfo" FromRole="UserInfo" ToRole="Contents" />
+    <NavigationProperty Name="News" Relationship="Model1.FK_News_UserInfo" FromRole="UserInfo" ToRole="News" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="n_id" />
+    </Key>
+    <Property Type="Int32" Name="n_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="category_id" Nullable="false" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="String" Name="n_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="n_author" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="n_form" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="n_content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="n_sort_id" Nullable="false" />
+    <Property Type="Int32" Name="n_click" Nullable="false" />
+    <Property Type="Int32" Name="n_is_lock" Nullable="false" />
+    <Property Type="DateTime" Name="add_time" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="Model1.FK_News_UserInfo" FromRole="News" ToRole="UserInfo" />
+    <NavigationProperty Name="Category" Relationship="Model1.FK_News_Category" FromRole="News" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Contents">
+    <Key>
+      <PropertyRef Name="cnt_id" />
+    </Key>
+    <Property Type="Int32" Name="cnt_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="cnt_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="category_id" Nullable="false" />
+    <Property Type="String" Name="cnt_content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cnt_linkurl" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cnt_imgurl" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="user_id" Nullable="false" />
+    <Property Type="Byte" Name="cnt_is_lock" Nullable="false" />
+    <Property Type="DateTime" Name="cnt_add_time" Nullable="false" Precision="3" />
+    <Property Type="String" Name="cnt_exp1" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="cnt_exp2" />
+    <NavigationProperty Name="UserInfo" Relationship="Model1.FK_Contents_UserInfo" FromRole="Contents" ToRole="UserInfo" />
+    <NavigationProperty Name="Category" Relationship="Model1.FK_Contents_Category" FromRole="Contents" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Type="Int32" Name="c_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="c_type" Nullable="false" />
+    <Property Type="String" Name="c_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="parent_id" Nullable="false" />
+    <NavigationProperty Name="News" Relationship="Model1.FK_News_Category" FromRole="Category" ToRole="News" />
+    <NavigationProperty Name="Contents" Relationship="Model1.FK_Contents_Category" FromRole="Category" ToRole="Contents" />
+    <NavigationProperty Name="Product" Relationship="Model1.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Type="Int32" Name="p_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="p_photo_no" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="p_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="category_id" Nullable="false" />
+    <Property Type="String" Name="img_url" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="p_content" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="sort_id" Nullable="false" />
+    <Property Type="Int32" Name="click" Nullable="false" />
+    <Property Type="DateTime" Name="add_time" Nullable="false" Precision="3" />
+    <Property Type="Byte" Name="is_lock" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Model1.FK_Product_Category" FromRole="Product" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Type="Int32" Name="f_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="f_title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="f_content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fuser_name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fuser_tel" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fuser_qq" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="fuser_email" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="fadd_time" Nullable="false" Precision="3" />
+    <Property Type="String" Name="freply_content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="freply_time" Precision="3" />
+    <Property Type="Boolean" Name="is_lock" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Type="Int32" Name="m_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="m_parent_mid" Nullable="false" />
+    <Property Type="String" Name="m_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="m_url" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="m_sortid" Nullable="false" />
+    <Property Type="Int32" Name="m_status" Nullable="false" />
+    <Property Type="String" Name="m_picname" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="m_level" Nullable="false" />
+    <Property Type="String" Name="m_remark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="m_exp1" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="m_exp2" />
+    <Property Type="DateTime" Name="m_add_time" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Contents_UserInfo">
+    <End Type="Model1.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="Model1.Contents" Role="Contents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Contents">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_UserInfo">
+    <End Type="Model1.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="Model1.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Category">
+    <End Type="Model1.Category" Role="Category" Multiplicity="1" />
+    <End Type="Model1.News" Role="News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contents_Category">
+    <End Type="Model1.Category" Role="Category" Multiplicity="1" />
+    <End Type="Model1.Contents" Role="Contents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="Contents">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Type="Model1.Category" Role="Category" Multiplicity="1" />
+    <End Type="Model1.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,104 @@
+﻿@model IEnumerable<YJ.CMS.Model.ViewModel.ProductView>
+
+@{
+    ViewBag.Title = "产品管理";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style type="text/css">
+    #titleDiv {
+        background-color: #0094ff;
+        width: 780px;
+        border: solid 1px #000;
+        color: white;
+        padding: 5px;
+    }
+
+    #ablist {
+        border: dashed 1px #808080;
+        width: 780px;
+    }
+
+        #ablist .abdiv {
+            width: 180px;
+            height: 170px;
+            border: 1px solid #000;
+            display: inline-table;
+            margin: 5px 0 5px 5px;
+        }
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .licenter {
+        text-align: center;
+    }
+
+    #edit {
+        display: none;
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        background-color: #adbd78;
+        z-index: 99;
+    }
+
+    #bgdiv {
+        background-color: #000;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 90;
+        opacity: 0.6;
+        height: 100%;
+        width: 100%;
+        display: none;
+    }
+
+    #pagebar {
+        width: 700px;
+        margin: 0 auto;
+    }
+
+        #pagebar li {
+            display: inline;
+        }
+
+        #pagebar .scolor {
+            color: #ff6a00;
+        }
+</style>
+<h2>产品管理</h2>
+<form action="@Url.Action("Index", "Product")" method="post">
+    <p>
+        名称：<input type="text" name="pname" />
+        所属类别：@*@Html.DropDownList("cateid", ViewBag.clist as SelectList)*@
+        @Html.DropDownList("cateid")
+        <input type="submit" value="查询" />
+    </p>
+</form>
+<p>
+    @Html.ActionLink("新建产品", "Create")
+</p>
+
+<div id="ablist">
+    @foreach (var item in Model)
+    {
+        <div class="abdiv">
+            <ul>
+                <li class="licenter">
+                    <img src="/upload/@DateTime.Now.Year/@DateTime.Now.Month/@DateTime.Now.Day/@item.img_url"></li>
+                <li class="licenter">@item.p_title</li>
+                <li class="licenter">类别：@item.Category.c_title </li>
+                <li class="licenter">
+                    <a href="@Url.Action("Edit", "Product", new { id = item.p_id })">编辑</a>
+                    |     <a href="@Url.Action("Delete", "Product", new { id = item.p_id })">删除</a>
+                    |                  
+                     <a href="@Url.Action("Upload", "Product", new { id = item.p_id })">上传</a>
+                </li>
+            </ul>
+        </div>
+    }
+</div>

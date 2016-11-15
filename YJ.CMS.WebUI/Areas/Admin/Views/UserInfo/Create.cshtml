@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "新增用户";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model YJ.CMS.Model.ViewModel.UserInfoView
+
+@section styles{
+    <link href="~/Content/override.css" rel="stylesheet" />
+}
+
+<h2>新增用户</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()    
+    <table class="list">
+        <tr>
+            <th>@Html.LabelFor(model => model.u_name) </th>
+            <td>
+                @Html.EditorFor(model => model.u_name)
+                @Html.ValidationMessageFor(model => model.u_name)
+            </td>
+        </tr>
+
+        <tr>
+            <th>@Html.LabelFor(model => model.u_pwd) </th>
+            <td>
+                @Html.EditorFor(model => model.u_pwd)
+                @Html.ValidationMessageFor(model => model.u_pwd)
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.u_confim_pwd) </th>
+            <td>
+                @Html.EditorFor(model => model.u_confim_pwd)
+                @Html.ValidationMessageFor(model => model.u_confim_pwd)
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.real_name) </th>
+            <td>
+                @Html.EditorFor(model => model.real_name)
+                @Html.ValidationMessageFor(model => model.real_name)
+            </td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.u_telephone) </th>
+            <td>
+                @Html.EditorFor(model => model.u_telephone)
+                @Html.ValidationMessageFor(model => model.u_telephone)
+            </td>
+        </tr>
+
+        <tr>
+            <th>@Html.LabelFor(model => model.u_email) </th>
+            <td>
+                @Html.EditorFor(model => model.u_email)
+                @Html.ValidationMessageFor(model => model.u_email)
+            </td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <td>
+
+                <input type="submit" value="创建" />
+
+                @Html.ActionLink("返回列表", "Index")
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                @Html.ValidationSummary()
+            </td>
+        </tr>
+    </table>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

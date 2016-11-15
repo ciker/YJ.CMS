@@ -1,0 +1,28 @@
+1、T4生成viewModel搜partial 关键字-->EntityClassOpening-->加上“VM”	框架搭建
+   code.Escape(entity)-->foreach 干掉..
+   navigationProperties：导航属性..	endType + "VM
+   fileManager.StartHeader：开头注释
+   命名空间
+
+2、使用autoFac创建Ibll实例..
+
+baseController里通过反射拿到所有的bll实例
+
+登陆页--vm注解--画验证码---点击切换使用Url.Action()---登陆逻辑---menu分部类实体		Remote/DataType
+
+分类新增---编写分页条---新增用户功能：Remote()特性校验用户名---新闻列表---新闻编辑---KindEditor
+
+产品列表---图片上传---异常处理---错误页面处理
+
+前台：产品列表---产品详情---分页---新闻列表---动态修改xml文件(XMLDocument)---联系我们---客户留言
+
+
+动态构造lanmda表达式	观察者模式【给事件注册方法(委托)】
+
+@RenderSection("styles", required: false)		@section styles{ }
+
+ModelState.IsValidField()		@model HandleErrorInfo//@Model.Exception.Message
+
+@{Html.RenderAction();}//Html.RenderPartial()		***时间创建文件夹怎么取图片***
+
+控制器路由命名空间、2种分部视图区别

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<YJ.CMS.Model.ViewModel.MenusView>
+ 
+<h2>菜单列表</h2>
+
+<p>
+    @Html.ActionLink("新建菜单", "Create")
+</p>
+<table class="list">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.m_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.m_parent_mid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.m_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.m_url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.m_sortid)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.m_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m_parent_mid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m_url)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.m_sortid)
+            </td>
+
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.m_id }) |            
+            @Html.ActionLink("停用", "Delete", new { id = item.m_id })
+            </td>
+        </tr>
+    }
+
+</table>
+

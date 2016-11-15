@@ -1,0 +1,8 @@
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\YJ.CMS.Model.dll.config
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\YJ.CMS.Model.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\YJ.CMS.Model.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\EntityFramework.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\EntityFramework.xml
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\obj\Debug\YJ.CMS.Model.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Model\obj\Debug\YJ.CMS.Model.pdb

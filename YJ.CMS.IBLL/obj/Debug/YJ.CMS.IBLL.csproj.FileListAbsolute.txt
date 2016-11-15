@@ -1,0 +1,10 @@
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\YJ.CMS.IBLL.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\YJ.CMS.IBLL.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\EntityFramework.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\YJ.CMS.Model.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\YJ.CMS.Model.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\EntityFramework.xml
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\obj\Debug\YJ.CMS.IBLL.csprojResolveAssemblyReference.cache
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\obj\Debug\YJ.CMS.IBLL.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.IBLL\obj\Debug\YJ.CMS.IBLL.pdb

@@ -1,0 +1,25 @@
+﻿@model List<YJ.CMS.Model.Menus>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        //开始生成一级菜单
+        if (item.m_parent_mid < 0)
+        {
+        <li class="level1">@item.m_name</li>
+            //开始生成当前一级菜单的二级菜单
+                    
+        <li>
+            <ul class="ullevel2">
+                @foreach (var subItem in Model)
+                {
+                    if (subItem.m_parent_mid == item.m_id)
+                    {
+                    <li class="level2">>><a href="@subItem.m_url">@subItem.m_name</a></li>
+                    }
+                }
+            </ul>
+        </li>
+        }
+    }
+</ul>

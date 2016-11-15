@@ -1,0 +1,69 @@
+﻿@model YJ.CMS.Model.ViewModel.UserInfoView
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/override.css" rel="stylesheet" />    
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+</head>
+<body>
+ 
+    @*@{Html.EnableUnobtrusiveJavaScript(false);}    *@
+    @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+    {
+        <table class="list">
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.u_name)</th>
+                <td>@Html.TextBoxFor(c => c.u_name)
+                    @Html.ValidationMessageFor(c => c.u_name)
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.u_pwd)</th>
+                <td>@Html.PasswordFor(c => c.u_pwd)
+                    @Html.ValidationMessageFor(c => c.u_pwd)
+                </td>
+            </tr>
+            <tr>
+                <th>@Html.DisplayNameFor(c => c.VCode)</th>
+                <td>@Html.TextBoxFor(c => c.VCode)
+                    <img src="@Url.Action("Vcode", "Login")" alt="验证码"  id="vcodeimg" style="cursor:pointer;" title="点击切换验证码" />
+                    @Html.ValidationMessageFor(c => c.VCode)
+                </td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                    <input type="submit" value="登录" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="color:red;">
+                    @Html.ValidationSummary(true)
+                </td>
+            </tr>
+        </table>
+    }
+
+    <script type="text/javascript">
+        $(function () {
+            $("#vcodeimg").click(function () {                
+                @*this.src = '@Url.Action("Vcode", "Login")';*@
+                var src = $("#vcodeimg").attr('src');
+                $("#vcodeimg").attr('src', src + "?r=" + Math.random());
+            });
+        });
+
+    </script>
+</body>
+</html>

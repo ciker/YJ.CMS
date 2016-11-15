@@ -1,0 +1,48 @@
+﻿@model IEnumerable<YJ.CMS.Model.ViewModel.CategoryView>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>产品分类列表</h2>
+<link href="~/Content/pageBar.css" rel="stylesheet" />
+
+<p>
+    @Html.ActionLink("创建类别", "Create")
+</p>
+<table class="list">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.c_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.c_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.c_title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.c_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.c_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.c_title)
+            </td>
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.c_id })
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="page_nav">
+   @Html.PageNavigate((int)ViewBag.CurrentPage, 4, (int)ViewBag.TotalCount)
+</div>

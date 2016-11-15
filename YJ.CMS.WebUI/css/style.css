@@ -1,0 +1,79 @@
+.bd {
+	height: 31px;
+	width: 1005px;
+}
+.nvbd {
+	border-left-style: none;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #FFFFFF;
+}
+body {
+	background-image: url(bg.gif);
+	background-repeat: repeat;
+}
+.newtb {
+	border-left-style: none;
+	border-right-style: none;
+	border-top-style: none;
+	border-bottom-style: none;
+}
+
+
+a.tt {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #979797;
+	text-decoration: none;
+}
+
+.main .leftm {
+}
+.main .leftm {
+}
+.t1 {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #333333;
+}
+a.nv {
+	font-family: "宋体";
+	font-size: 11pt;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+
+.bd div {
+	padding-top: 7px;
+	padding-left: 60px;
+}
+.main {
+	height: 800px;
+	width: 1005px;
+	padding-top: 20px;
+}
+.leftm {
+	width: 229px;
+	padding-left: 10px;
+	height: 600px;
+	float: left;
+}
+.leftm2 {
+	height: 120px;
+	padding-left: 20px;
+}
+.right {
+	float: right;
+	height: auto;
+	width: 750px;
+}
+a.ttl {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-weight: bold;
+	color: 012E66;
+	text-decoration: none;
+}

@@ -1,0 +1,41 @@
+﻿@model YJ.CMS.Model.ViewModel.CategoryView
+
+@{
+    ViewBag.Title = "新增类别数据";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/override.css" rel="stylesheet" />
+<h2>新增类别数据 </h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table class="list">
+        <tr>
+            <th>@Html.LabelFor(model => model.c_type)</th>
+            <td>@Html.TextBoxFor(model => model.c_type)
+                @Html.ValidationMessageFor(model => model.c_type)</td>
+        </tr>
+
+        <tr>
+            <th>@Html.LabelFor(model => model.c_title)</th>
+            <td>@Html.EditorFor(model => model.c_title)
+                @Html.ValidationMessageFor(model => model.c_title)</td>
+        </tr>
+
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="新增" />
+                @Html.ActionLink("返回列表页面", "Index")</td>
+        </tr>
+    </table>
+  
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

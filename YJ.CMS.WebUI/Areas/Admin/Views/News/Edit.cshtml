@@ -1,0 +1,81 @@
+﻿@model YJ.CMS.Model.ViewModel.NewsView
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>编辑新闻</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table class="list">
+
+        <tr>
+            <th>@Html.LabelFor(model => model.category_id)</th>
+            <td>@Html.DropDownListFor(model => model.category_id, ViewBag.clist as SelectList)
+                @Html.ValidationMessageFor(model => model.category_id)</td>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.n_title)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.n_title)
+                @Html.ValidationMessageFor(model => model.n_title)
+            </td>
+        </tr>
+
+        <tr>
+            <th>@Html.LabelFor(model => model.n_author)</th>
+            <td>@Html.EditorFor(model => model.n_author)
+                @Html.ValidationMessageFor(model => model.n_author)</td>
+        </tr>
+
+
+
+        <tr>
+            <th>@Html.LabelFor(model => model.n_form)</th>
+            <td>@Html.EditorFor(model => model.n_form)
+                @Html.ValidationMessageFor(model => model.n_form)</td>
+        </tr>
+
+
+        <tr>
+            <th>@Html.LabelFor(model => model.n_content)</th>
+            <td>
+                @Html.TextAreaFor(model => model.n_content, new { rows = "50", clos = "20", style = "width:650px;height:500px" })
+                @Html.ValidationMessageFor(model => model.n_content)
+
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="编辑" />
+                @Html.ActionLink("返回到列表", "Index")
+
+            </td>
+        </tr>
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/kindeditor/lang/zh_CN.js"></script>
+    <script src="~/Scripts/kindeditor/kindeditor-min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var editor = KindEditor.create('textarea[name="n_content"]',  //将会查找当前页面上的textarer文本框
+                      {
+                          resizeType: 1,  //表示当前富文本编辑框可以拉伸和收缩
+                          uploadJson: '/kindeditor/upload_json.ashx', //视频等文件上传到kindeditor/attached 文件
+                          allowFileManager: true
+                      });
+        })
+    </script>
+}

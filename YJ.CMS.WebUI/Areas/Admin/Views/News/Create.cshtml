@@ -1,0 +1,50 @@
+﻿@model YJ.CMS.Model.ViewModel.NewsView
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>添加新闻</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()   
+
+    <table class="list">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.n_id)
+            </th>
+            <td>
+                @Html.TextBoxFor(c => c.n_id)
+                @Html.ValidationMessageFor(c => c.n_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.category_id)
+            </th>
+            <td>
+                @Html.TextBoxFor(c => c.Category.c_title)
+                @Html.ValidationMessageFor(c => c.Category.c_title)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.n_title)
+            </th>
+            <td>
+                @Html.TextBoxFor(c => c.n_title)
+                @Html.ValidationMessageFor(c => c.n_title)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="创建" />
+                @Html.ActionLink("返回", "Index")
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<YJ.CMS.Model.News>
+
+@{
+    ViewBag.Title = "新闻列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using YJ.CMS.Common
+
+@section styles{
+    <link href="~/Content/pageBar.css" rel="stylesheet" />
+}
+
+<table width="1005" border="0" align="center" cellpadding="0" cellspacing="0" background="/images/main1_27.gif">
+    <tbody>
+        <tr>
+            <td height="780" valign="top">
+                <div class="main">
+                    <div class="leftm" id="l1">
+                         @{                            
+                            Html.RenderAction("ComIntroduce", "ParitlView");
+                        }
+                    </div>
+
+                    <div class="right" id="right">
+                        <div class="main2" id="l2">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table width="687" border="0" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="221" height="24" background="/images/nv.gif">
+                                                            <div class="nvv" id="nvv">新闻资讯</div>
+                                                        </td>
+                                                        <td width="380">&nbsp;</td>
+                                                        <td width="86">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="jianjie">
+                            <table width="641" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td width="85%" height="25" valign="middle" class="new"><span class="STYLE2"><a href="/News/Detils/@item.n_id" class="tt3">@item.n_title</a></span></td>
+                                            <td width="15%" height="25" valign="middle" class="tnew"><span class="STYLE2">[@item.add_time.DateTimeFmtYYYYMMDD()]</span></td>
+                                        </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="page_nav">
+                    @Html.PageNavigate((int)ViewBag.CurrentPage, 2, (int)ViewBag.TotalCount)
+                </div>                                
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+

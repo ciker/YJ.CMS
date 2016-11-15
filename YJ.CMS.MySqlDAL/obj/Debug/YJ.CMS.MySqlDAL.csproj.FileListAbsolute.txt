@@ -1,0 +1,12 @@
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.MySqlDAL.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.MySqlDAL.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.IDAL.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.Model.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\EntityFramework.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.IDAL.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\YJ.CMS.Model.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\EntityFramework.xml
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\obj\Debug\YJ.CMS.MySqlDAL.csprojResolveAssemblyReference.cache
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\obj\Debug\YJ.CMS.MySqlDAL.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.MySqlDAL\obj\Debug\YJ.CMS.MySqlDAL.pdb

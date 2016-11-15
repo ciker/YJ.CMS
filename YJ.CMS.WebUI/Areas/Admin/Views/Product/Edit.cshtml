@@ -1,0 +1,86 @@
+﻿@model YJ.CMS.Model.ViewModel.ProductView
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>编辑产品</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+
+    <table class="list">
+
+         <tr>
+            <th>
+                @Html.LabelFor(model => model.p_title)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.p_title)
+                @Html.ValidationMessageFor(model => model.p_title)
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.p_photo_no)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.p_photo_no)
+                @Html.ValidationMessageFor(model => model.p_photo_no)
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.category_id)
+            </th>
+            <td>
+                @Html.DropDownListFor(model => model.category_id, ViewBag.Clist as SelectList)
+                @Html.ValidationMessageFor(model => model.category_id)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.p_content)
+            </th>
+            <td>
+                @Html.TextAreaFor(model => model.p_content, new { rows = "50", clos = "20", style = "width:650px;height:300px" })
+                @Html.ValidationMessageFor(model => model.p_content)
+            </td>
+        </tr>
+       
+        <tr>
+            <th></th>
+            <td>
+                <input type="submit" value="编辑" />
+                @Html.ActionLink("返回列表", "Index")
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <td>
+                @Html.ValidationSummary(true)
+            </td>
+        </tr>
+    </table>
+}
+
+@section Scripts {
+    <script src="~/kindeditor/lang/zh_CN.js"></script>
+    <script src="~/kindeditor/kindeditor.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var editor = KindEditor.create('textarea[name="p_content"]',  //将会查找当前页面上的textarer文本框，要求此文本框的name属性值必须为n_content
+                      {
+                          resizeType: 1,  //表示当前富文本编辑框可以拉伸和收缩
+                          uploadJson: '/kindeditor/upload_json.ashx', //通过一般处理程序将富文本编辑框插入的图片，视频等文件上传到kindeditor/attached 文件
+                          allowFileManager: true
+                      });
+        })
+    </script>
+}

@@ -1,0 +1,158 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: #0094ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        color: #ff6a00;
+        font-weight: bold;
+    }
+
+.outScop {
+    width: 1024px;
+    margin: 10px auto;
+}
+/*头部样式*/
+.headScop {
+    border: 1px solid #0094ff;
+    height: 30px;
+}
+
+    .headScop ul {
+        margin: 5px 5px 0 0;
+        float: right;
+    }
+
+    .headScop li {
+        list-style: none;
+        display: inline;
+    }
+/*头部样式 结尾*/
+
+/*内容样式*/
+.mainScop {
+    min-height: 500px;
+    height:auto;
+    border: 1px solid #0094ff;
+    margin-top: 5px;
+}
+
+    .mainScop .titleScop {
+        background-color: #0094ff;
+        color: white;
+        font: 500 32px "黑体";
+        padding-left: 10px;
+    }
+
+    .mainScop .leftMenu {
+        border: dashed 1px #808080;
+        height: 450px;
+        width: 200px;
+        float: left;
+        margin: 5px;
+    }
+
+.level1 {
+    background-color: #e5dddd;
+    color: #0094ff;
+    padding: 5px;
+    font-weight: bold;
+    list-style: none;
+}
+
+.level2 {
+    list-style: none;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.ullevel2 {
+    margin-left: 1.5em;
+}
+
+.rightContent {
+    height: auto;
+    min-height: 450px;    
+    width: 795px;
+    border: dashed 1px #808080;
+    float: right;
+    margin: 5px;
+}
+
+.list {
+    border-collapse: collapse;
+    margin: 2px;
+    width: 790px;
+}
+
+    .list th {
+        background-color: #dedede;
+        border: 1px solid #0094ff;
+        text-align: center;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .list td {
+        border: 1px solid #0094ff;
+        text-align: center;
+        padding: 5px;
+    }
+
+/*内容样式结尾*/
+
+/*尾部样式*/
+.footScop {
+    height: 30px;
+    border: 1px solid #0094ff;
+    font: 500 18px "黑体";
+    margin-top: 5px;
+    text-align: center;
+}
+/*尾部样式结尾*/
+
+li {
+    list-style: none;
+}
+
+.pd5 {
+    padding: 5px;
+}
+
+
+.field-validation-error {
+    color: red;    
+}
+
+h2 {
+    background-color: #dedede;
+    padding: 5px;
+    width: 780px;
+}
+
+p {
+    text-align: right;
+    border: 1px solid #0094ff;
+    height: auto;
+    min-height: 30px;
+    margin: 2px;
+    width: 778px;
+    padding: 5px;
+}
+
+#pagebar {
+    width:700px;
+    margin:0 auto;
+}
+
+#pagebar li {
+    display:inline;  
+    cursor:pointer;
+}
+

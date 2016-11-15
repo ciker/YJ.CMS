@@ -1,0 +1,54 @@
+﻿@model YJ.CMS.Model.Contents
+
+@{
+    ViewBag.Title = "公司联系信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table width="1005" border="0" align="center" cellpadding="0" cellspacing="0" background="images/main1_27.gif">
+    <tbody>
+        <tr>
+            <td height="780" valign="top">
+                <div class="main">
+                    <div class="leftm" id="l1">
+                        @{Html.RenderAction("ComIntroduce", "ParitlView");}
+                        @{Html.RenderAction("ContactPv", "ParitlView");}
+                    </div>
+
+                    <div class="right" id="right">
+
+                        <div id="jianjie">
+                            <div>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>
+                                                    <br>
+                                                    @*由于cnt_content字段中的内容会带有html标签，所以应该使用@@Html.Raw()来显示
+                                                    用户才会看到正常的html页面，否则会将html标签当做文本字符串输出*@
+
+                                                    @* @Html.Raw(Model.cnt_content)*@
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div align="right" class="m61">
+                                                    <p><a href="#" class="tt3" onclick="MM_callJS('javascript:history.go(-1);')">•返回上级</a></p>
+                                                    <p>&nbsp;</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="UserInfo">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.UserInfo)">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_pwd" ColumnName="u_pwd" />
+          <ScalarProperty Name="real_name" ColumnName="real_name" />
+          <ScalarProperty Name="u_telephone" ColumnName="u_telephone" />
+          <ScalarProperty Name="u_email" ColumnName="u_email" />
+          <ScalarProperty Name="u_is_lock" ColumnName="u_is_lock" />
+          <ScalarProperty Name="u_add_time" ColumnName="u_add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.News)">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="n_id" ColumnName="n_id" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="n_title" ColumnName="n_title" />
+          <ScalarProperty Name="n_author" ColumnName="n_author" />
+          <ScalarProperty Name="n_form" ColumnName="n_form" />
+          <ScalarProperty Name="n_content" ColumnName="n_content" />
+          <ScalarProperty Name="n_sort_id" ColumnName="n_sort_id" />
+          <ScalarProperty Name="n_click" ColumnName="n_click" />
+          <ScalarProperty Name="n_is_lock" ColumnName="n_is_lock" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contents">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Contents)">
+        <MappingFragment StoreEntitySet="Contents">
+          <ScalarProperty Name="cnt_id" ColumnName="cnt_id" />
+          <ScalarProperty Name="cnt_title" ColumnName="cnt_title" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="cnt_content" ColumnName="cnt_content" />
+          <ScalarProperty Name="cnt_linkurl" ColumnName="cnt_linkurl" />
+          <ScalarProperty Name="cnt_imgurl" ColumnName="cnt_imgurl" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="cnt_is_lock" ColumnName="cnt_is_lock" />
+          <ScalarProperty Name="cnt_add_time" ColumnName="cnt_add_time" />
+          <ScalarProperty Name="cnt_exp1" ColumnName="cnt_exp1" />
+          <ScalarProperty Name="cnt_exp2" ColumnName="cnt_exp2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Category)">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="c_id" ColumnName="c_id" />
+          <ScalarProperty Name="c_type" ColumnName="c_type" />
+          <ScalarProperty Name="c_title" ColumnName="c_title" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Product)">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_photo_no" ColumnName="p_photo_no" />
+          <ScalarProperty Name="p_title" ColumnName="p_title" />
+          <ScalarProperty Name="category_id" ColumnName="category_id" />
+          <ScalarProperty Name="img_url" ColumnName="img_url" />
+          <ScalarProperty Name="p_content" ColumnName="p_content" />
+          <ScalarProperty Name="sort_id" ColumnName="sort_id" />
+          <ScalarProperty Name="click" ColumnName="click" />
+          <ScalarProperty Name="add_time" ColumnName="add_time" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feedback">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.feedback)">
+        <MappingFragment StoreEntitySet="feedback">
+          <ScalarProperty Name="f_id" ColumnName="f_id" />
+          <ScalarProperty Name="f_title" ColumnName="f_title" />
+          <ScalarProperty Name="f_content" ColumnName="f_content" />
+          <ScalarProperty Name="fuser_name" ColumnName="fuser_name" />
+          <ScalarProperty Name="fuser_tel" ColumnName="fuser_tel" />
+          <ScalarProperty Name="fuser_qq" ColumnName="fuser_qq" />
+          <ScalarProperty Name="fuser_email" ColumnName="fuser_email" />
+          <ScalarProperty Name="fadd_time" ColumnName="fadd_time" />
+          <ScalarProperty Name="freply_content" ColumnName="freply_content" />
+          <ScalarProperty Name="freply_time" ColumnName="freply_time" />
+          <ScalarProperty Name="is_lock" ColumnName="is_lock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Menus)">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="m_id" ColumnName="m_id" />
+          <ScalarProperty Name="m_parent_mid" ColumnName="m_parent_mid" />
+          <ScalarProperty Name="m_name" ColumnName="m_name" />
+          <ScalarProperty Name="m_url" ColumnName="m_url" />
+          <ScalarProperty Name="m_sortid" ColumnName="m_sortid" />
+          <ScalarProperty Name="m_status" ColumnName="m_status" />
+          <ScalarProperty Name="m_picname" ColumnName="m_picname" />
+          <ScalarProperty Name="m_level" ColumnName="m_level" />
+          <ScalarProperty Name="m_remark" ColumnName="m_remark" />
+          <ScalarProperty Name="m_exp1" ColumnName="m_exp1" />
+          <ScalarProperty Name="m_exp2" ColumnName="m_exp2" />
+          <ScalarProperty Name="m_add_time" ColumnName="m_add_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

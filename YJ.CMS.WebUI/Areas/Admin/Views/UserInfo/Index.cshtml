@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "用户列表";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<YJ.CMS.Model.ViewModel.UserInfoView>
+
+<h2>用户列表</h2>
+
+<p>
+    @Html.ActionLink("新建用户", "Create")
+</p>
+<table class="list">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_name)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.real_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_telephone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.u_is_lock)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.user_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.real_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_telephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.u_email)
+            </td>
+            <td>
+                @{  string str = item.u_is_lock == 1 ? "停用" : "正常";   }
+                @str
+            </td>
+
+            <td>
+                @Html.ActionLink("编辑", "Edit", new { id = item.user_id }) |        
+                        
+                @{var islock = item.u_is_lock == 1;
+                  if (islock == false)
+                  {
+                    @Ajax.ActionLink("停用", "Stop", "UserInfo", new AjaxOptions()
+                       {
+                           Confirm = "是否停用当前用户?",
+                           Url = Url.Action("Stop", "UserInfo", new { id = item.user_id }),
+                           OnSuccess = "sucess"
+                       })
+                  }
+                  else
+                  {
+                    @Ajax.ActionLink("启用", "Start", "UserInfo", new AjaxOptions()
+                     {
+                       Confirm = "是否启用当前用户?",
+                       Url = Url.Action("Start", "UserInfo", new { id = item.user_id }),
+                       OnSuccess = "sucess1"
+                   })
+                  }
+                } |                                
+                <a href="javascript:;" class="del" uid="@item.user_id" >删除</a>
+                @*@Ajax.ActionLink()*@
+            </td>
+        </tr>
+    }
+
+</table>
+@section scripts{
+    <script>
+        function sucess(jsobj) {
+            alert("停用成功");
+            window.location = window.location;
+        }
+
+        function sucess1(jsobj) {
+            alert("启用成功");
+            window.location = window.location;
+        }
+
+        $('.del').click(function () {
+            if (confirm('确定要删除此用户？')) {
+                var uid = $(this).attr('uid');
+                var _this = $(this);
+                $.post('/Admin/Userinfo/Delete', { id: uid }, function (res) {
+                    if (res == 'ok') {
+                        _this.parent().parent().remove();
+                    }
+                })
+            }
+        })
+    </script>
+}

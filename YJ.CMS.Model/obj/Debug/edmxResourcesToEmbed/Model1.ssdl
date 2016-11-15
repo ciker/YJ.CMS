@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="UserInfo" EntityType="Model1.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="News" EntityType="Model1.Store.News" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contents" EntityType="Model1.Store.Contents" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="Model1.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Product" EntityType="Model1.Store.Product" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="feedback" EntityType="Model1.Store.feedback" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menus" EntityType="Model1.Store.Menus" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Contents_UserInfo" Association="Model1.Store.FK_Contents_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="Contents" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_UserInfo" Association="Model1.Store.FK_News_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Category" Association="Model1.Store.FK_News_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Contents_Category" Association="Model1.Store.FK_Contents_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Contents" EntitySet="Contents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="Model1.Store.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_name" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="u_pwd" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="real_name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="u_telephone" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="u_email" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="u_is_lock" Type="int" Nullable="false" />
+    <Property Name="u_add_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="n_id" />
+    </Key>
+    <Property Name="n_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="n_title" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="n_author" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="n_form" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="n_content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="n_sort_id" Type="int" Nullable="false" />
+    <Property Name="n_click" Type="int" Nullable="false" />
+    <Property Name="n_is_lock" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contents">
+    <Key>
+      <PropertyRef Name="cnt_id" />
+    </Key>
+    <Property Name="cnt_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cnt_title" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="cnt_content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="cnt_linkurl" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="cnt_imgurl" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="cnt_is_lock" Type="tinyint" Nullable="false" />
+    <Property Name="cnt_add_time" Type="datetime" Nullable="false" />
+    <Property Name="cnt_exp1" Type="nvarchar" Nullable="true" MaxLength="400" />
+    <Property Name="cnt_exp2" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="c_type" Type="int" Nullable="false" />
+    <Property Name="c_title" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="parent_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="p_id" />
+    </Key>
+    <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_photo_no" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="p_title" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="img_url" Type="nvarchar" Nullable="true" MaxLength="255" />
+    <Property Name="p_content" Type="nvarchar" Nullable="true" MaxLength="2000" />
+    <Property Name="sort_id" Type="int" Nullable="false" />
+    <Property Name="click" Type="int" Nullable="false" />
+    <Property Name="add_time" Type="datetime" Nullable="false" />
+    <Property Name="is_lock" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="f_id" />
+    </Key>
+    <Property Name="f_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="f_title" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="f_content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="fuser_name" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="fuser_tel" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="fuser_qq" Type="nvarchar" Nullable="true" MaxLength="30" />
+    <Property Name="fuser_email" Type="nvarchar" Nullable="true" MaxLength="100" />
+    <Property Name="fadd_time" Type="datetime" Nullable="false" />
+    <Property Name="freply_content" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="freply_time" Type="datetime" Nullable="true" />
+    <Property Name="is_lock" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="m_id" />
+    </Key>
+    <Property Name="m_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="m_parent_mid" Type="int" Nullable="false" />
+    <Property Name="m_name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="m_url" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="m_sortid" Type="int" Nullable="false" />
+    <Property Name="m_status" Type="int" Nullable="false" />
+    <Property Name="m_picname" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="m_level" Type="int" Nullable="false" />
+    <Property Name="m_remark" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="m_exp1" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="m_exp2" Type="int" Nullable="true" />
+    <Property Name="m_add_time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Contents_UserInfo">
+    <End Role="UserInfo" Type="Model1.Store.UserInfo" Multiplicity="1" />
+    <End Role="Contents" Type="Model1.Store.Contents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="Contents">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_UserInfo">
+    <End Role="UserInfo" Type="Model1.Store.UserInfo" Multiplicity="1" />
+    <End Role="News" Type="Model1.Store.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Category">
+    <End Role="Category" Type="Model1.Store.Category" Multiplicity="1" />
+    <End Role="News" Type="Model1.Store.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Contents_Category">
+    <End Role="Category" Type="Model1.Store.Category" Multiplicity="1" />
+    <End Role="Contents" Type="Model1.Store.Contents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="Contents">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="Model1.Store.Category" Multiplicity="1" />
+    <End Role="Product" Type="Model1.Store.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

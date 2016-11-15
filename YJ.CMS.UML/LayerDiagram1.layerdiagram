@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="ac95f00f-adeb-4dec-b68c-50c3822cb855" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <comments>
+    <comment Id="fd60ef48-6089-4f26-9827-2e39e81a6c4d" name="Comment1">
+      <body>依赖注入</body>
+      <layerElements>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="45689a08-bda7-448b-a340-da8398748330" />
+        </linkFromCommentToLayerElement>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="1ea8227d-7117-48cb-a162-ec9f1cd19806" />
+        </linkFromCommentToLayerElement>
+        <linkFromCommentToLayerElement>
+          <layerMoniker Id="9cd3861f-a20c-440c-9f12-f9c0d3789d4a" />
+        </linkFromCommentToLayerElement>
+      </layerElements>
+    </comment>
+  </comments>
+  <layers>
+    <layer Id="ab220ac3-e994-4ba4-926d-8276a49b57dc" name="DB" />
+    <layer Id="bb75186e-5aee-4ec4-93c8-963fa1955f0d" name="DLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="664c88b0-fff5-464b-81f0-213610cac6c2" direction="Forward">
+          <layerMoniker Id="7444624c-c4ee-4746-a83b-a3913f63546c" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="ec8019e0-f9a2-4a78-8b7c-f7d65bf81060" name="IDLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="6dd2ec49-e34f-4d3a-82f6-dcbd1c1589bd" direction="Forward">
+          <layerMoniker Id="bb75186e-5aee-4ec4-93c8-963fa1955f0d" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="9cd3861f-a20c-440c-9f12-f9c0d3789d4a" name="BLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="58871e6d-5484-4f8a-9ab4-f167af1b8e3f" direction="Forward">
+          <layerMoniker Id="ec8019e0-f9a2-4a78-8b7c-f7d65bf81060" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="561b56fc-89d6-4982-ac3f-0a5bbc37fbb8" direction="Forward">
+          <layerMoniker Id="0c4632ba-967f-4bed-80ea-28ed7b9f9b85" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="8b83af8a-9251-4117-8fa5-00ac15345d64" name="IBLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="bb3ae281-9c27-436a-b288-bf32dbce01d3" direction="Forward">
+          <layerMoniker Id="9cd3861f-a20c-440c-9f12-f9c0d3789d4a" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1ea8227d-7117-48cb-a162-ec9f1cd19806" name="UI">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="cf2aa5bd-fc27-44c4-bf40-f6bd1dd0305b" direction="Forward">
+          <layerMoniker Id="8b83af8a-9251-4117-8fa5-00ac15345d64" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7a414f33-a55e-4169-8202-c23456667f2b" direction="Forward">
+          <layerMoniker Id="0c4632ba-967f-4bed-80ea-28ed7b9f9b85" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="45689a08-bda7-448b-a340-da8398748330" name="AutoFac" />
+    <layer Id="7444624c-c4ee-4746-a83b-a3913f63546c" name="Model">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="7d0c1e45-e0f3-412a-8bbf-314c9e270e8f" direction="Forward">
+          <layerMoniker Id="ab220ac3-e994-4ba4-926d-8276a49b57dc" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="0c4632ba-967f-4bed-80ea-28ed7b9f9b85" name="Common" />
+  </layers>
+</layerModel>

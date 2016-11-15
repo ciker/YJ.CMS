@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <style type="text/css">
+        #jianjie {
+            width: 678px;
+        }
+
+        .show {
+            border: solid 1px #000;
+            display: inline-table;
+            margin: 15px;
+        }
+
+        .show1 {
+            display: inline-table;
+            margin: 15px;
+            background-color: #c1ebf1;
+            border: solid 1px #00ff90;
+        }
+    </style>
+    <link href="~/Content/pageBar.css" rel="stylesheet" />
+}
+
+<table width="1005" border="0" align="center" cellpadding="0" cellspacing="0" background="images/main1_27.gif">
+    <tbody>
+        <tr>
+            <td height="780" valign="top">
+                <div class="main">
+                    @{
+                        Html.RenderAction("ProductCateList", "ParitlView");
+                    }
+
+                    <div class="right" id="right">
+                        <div class="main2" id="l2">
+                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table width="687" border="0" cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="221" height="24" background="/images/nv.gif">
+                                                            <div class="nvv" id="nvv">产品展示</div>
+                                                        </td>
+                                                        <td width="380">&nbsp;</td>
+                                                        <td width="86">&nbsp;</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="jianjie">
+                            @foreach (var item in Model)
+                            {
+                                <div class="show" onmouseover="this.className='show1'" onmouseout="this.className='show'">
+                                    <br>
+                                    <a href="/Product/Detils/@item.p_id">
+                                        <img src="@item.img_url" width="176" height="122" border="0"></a><br>
+                                    <br>
+                                    <a href="/Product/Detils/@item.p_id" class="tttt">@item.p_title</a>
+                                </div>
+                            }
+                        </div>
+
+                        <!--动态产生分页控件-->
+                        <div class="page_nav">
+                            @Html.PageNavigate((int)ViewBag.CurrentPage, 1, (int)ViewBag.TotalCount)
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+    </tbody>
+</table>

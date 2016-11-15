@@ -1,0 +1,26 @@
+﻿@model IEnumerable<YJ.CMS.Model.Contents>
+
+<div @*id="ll1"*@>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tbody>
+            <tr>
+                <td height="41" background="/images/main1_27.jpg">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="leftm2">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="nvt">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td width="12%" height="25" align="left" valign="middle">
+                            <img src="/images/main1_39.jpg" width="14" height="13"></td>
+                        <td width="88%" height="25" valign="middle" class="tttt"><a href="@item.cnt_linkurl/@item.cnt_id" class="tttt">@item.cnt_title</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

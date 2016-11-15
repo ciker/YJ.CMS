@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.8.2.js"></script>        
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>    
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("styles", required: false)
+</head>
+<body>
+    <div class="outScop">
+        <div class="headScop">
+            <ul>
+                <li>欢迎【@TempData["currentUser"]】登录</li>
+                <li><a href="/Home/Index">返回企业站点首页</a></li>
+                <li><a id="cancle" href="javascript:;" >退出</a></li>
+            </ul>
+        </div>
+        <div class="mainScop">
+            <div class="titleScop">
+                企业后台管理
+            </div>
+            <div class="leftMenu">
+                @{Html.RenderAction("GetMenus", "Menus");}
+             
+            </div>
+
+            <div class="rightContent">
+                @RenderBody()
+            </div>
+
+            <div style="clear:both"></div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $('#cancle').click(function () {
+            if (confirm("确定要退出吗？")) {
+                $.get('/Admin/Login/Cancle', null, function (res) {
+                    if (res == 'ok') {
+                        window.location.href = '/Admin/Login/Index';
+                    }
+                })                
+            }
+        })
+
+    </script>
+</body>
+</html>

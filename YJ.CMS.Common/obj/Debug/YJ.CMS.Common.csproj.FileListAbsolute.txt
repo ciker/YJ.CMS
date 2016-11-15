@@ -1,0 +1,5 @@
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Common\bin\Debug\YJ.CMS.Common.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Common\bin\Debug\YJ.CMS.Common.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Common\bin\Debug\log4net.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Common\obj\Debug\YJ.CMS.Common.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.Common\obj\Debug\YJ.CMS.Common.pdb

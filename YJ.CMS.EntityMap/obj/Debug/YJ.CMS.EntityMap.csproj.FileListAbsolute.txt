@@ -1,0 +1,8 @@
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\bin\Debug\YJ.CMS.EntityMap.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\bin\Debug\YJ.CMS.EntityMap.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\bin\Debug\AutoMapper.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\bin\Debug\YJ.CMS.Model.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\bin\Debug\YJ.CMS.Model.pdb
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\obj\Debug\YJ.CMS.EntityMap.csprojResolveAssemblyReference.cache
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\obj\Debug\YJ.CMS.EntityMap.dll
+G:\asp.net\asp.net点卡销售项目\YJ.CMS\YJ.CMS.EntityMap\obj\Debug\YJ.CMS.EntityMap.pdb

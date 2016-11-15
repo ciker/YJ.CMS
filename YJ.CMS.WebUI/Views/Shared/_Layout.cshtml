@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>    
+    <link href="~/css/style.css" rel="stylesheet" />
+    <style type="text/css">
+        <!--
+        body {
+            margin-top: 0px;
+        }
+
+        #Layer1 {
+            position: absolute;
+            width: 200px;
+            height: 90px;
+            z-index: 1;
+            left: 335px;
+            top: 138px;
+        }
+
+        .m66 {
+            width: 700px;
+        }
+        -->
+    </style>    
+    <link href="~/css/style2.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+    <style type="text/css">
+        <!--
+        .bd1 {
+            width: 700px;
+        }
+
+        .bd2 {
+            width: 500px;
+        }
+        -->
+    </style>    
+    <script language="JavaScript">
+<!--
+    function mmLoadMenus() {
+        if (window.mm_menu_1130232445_0) return;
+        window.mm_menu_1130232445_0 = new Menu("root", 76, 18, "宋体", 12, "#0161AD", "#000000", "", "", "center", "middle", 3, 0, 1000, -5, 7, true, false, false, 0, true, true);
+        mm_menu_1130232445_0.addMenuItem("公司简介", "location='/About/Index'");
+        mm_menu_1130232445_0.addMenuItem("组织结构", "location='/About/jiegou'");
+        mm_menu_1130232445_0.addMenuItem("公司文化", "location='/About/wenhua'");
+        mm_menu_1130232445_0.addMenuItem("公司荣誉", "location='rongyu.html'");
+        mm_menu_1130232445_0.hideOnMouseOut = true;
+        mm_menu_1130232445_0.bgColor = '#555555';
+        mm_menu_1130232445_0.menuBorder = 1;
+        mm_menu_1130232445_0.menuLiteBgColor = '#FFFFFF';
+        mm_menu_1130232445_0.menuBorderBgColor = '#777777';
+        window.mm_menu_1130233529_0 = new Menu("root", 63, 18, "宋体", 12, "#015FA9", "#000000", "", "", "center", "middle", 3, 0, 1000, -5, 7, true, false, false, 0, true, true);
+        //mm_menu_1130233529_0.addMenuItem("发泡板", "location='show.html'");
+        //mm_menu_1130233529_0.addMenuItem("改性剂", "location='show.html'");
+        //mm_menu_1130233529_0.addMenuItem("单板瓦", "location='show.html'");
+        mm_menu_1130233529_0.hideOnMouseOut = true;
+        mm_menu_1130233529_0.bgColor = '#555555';
+        mm_menu_1130233529_0.menuBorder = 1;
+        mm_menu_1130233529_0.menuLiteBgColor = '#FFFFFF';
+        mm_menu_1130233529_0.menuBorderBgColor = '#777777';
+        window.mm_menu_1130234253_0 = new Menu("root", 76, 18, "宋体", 12, "#015FA9", "#000000", "", "", "center", "middle", 3, 0, 1000, -5, 7, true, false, false, 0, true, true);
+        mm_menu_1130234253_0.addMenuItem("公司新闻", "location='/News/CompanyNews'");
+        mm_menu_1130234253_0.addMenuItem("行业动态", "location='/News/HangYeNews'");
+        mm_menu_1130234253_0.hideOnMouseOut = true;
+        mm_menu_1130234253_0.bgColor = '#555555';
+        mm_menu_1130234253_0.menuBorder = 1;
+        mm_menu_1130234253_0.menuLiteBgColor = '#FFFFFF';
+        mm_menu_1130234253_0.menuBorderBgColor = '#777777';
+
+        mm_menu_1130234253_0.writeMenus();
+    } // mmLoadMenus()
+    //-->
+    </script>    
+    <script src="~/Scripts/mm_menu.js"></script>
+    
+</head>
+<body>
+    <div id="conter">
+        <script type="text/javascript">mmLoadMenus();</script>
+        <table width="1005" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <img src="/images/main1_01.jpg" width="1005" height="5" /></td>
+            </tr>
+            <tr>
+                <td height="65">
+                    <table width="1005" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="65">&nbsp;</td>
+                            <td width="449">
+                                <img src="/images/main1_04.jpg" width="449" height="57" /></td>
+                            <td width="182">&nbsp;</td>
+                            <td width="309" valign="top">
+                                <div>
+                                    <img src="/images/main1_07.jpg" width="19" height="13" />
+                                    <a href="/Home/Index" class="tt">首页</a>
+                                    <img src="/images/main1_09.jpg" width="17" height="13" />
+                                    <a href="#" class="tt">设置为首页</a>
+                                    <img src="/images/main1_11.jpg" width="17" height="13" />
+                                    <a href="#" class="tt">加入收藏</a>
+                                    <img src="/images/main1_13.jpg" width="17" height="13" />
+                                    <a href="/Contact/Index" class="tt">联系我们</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="1005" height="31" background="/images/main1_20.jpg">
+                    <div class="bd">
+                        <div class="vb">
+                            <table width="897" border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="75" align="center" valign="middle" class="nvbd"><a href="/Home/Index" class="nv">首页</a></td>
+                                    <td width="75" align="center" valign="middle" class="nvbd"><a href="/About/Index" name="link4" class="nv" id="link1" onmouseover="MM_showMenu(window.mm_menu_1130232445_0,-100,30,null,'link4')" onmouseout="MM_startTimeout();">公司简介</a></td>
+                                    <td width="75" align="center" valign="middle" class="nvbd"><a href="/Product/Index" name="link6" class="nv" id="link2" onmouseover="MM_showMenu(window.mm_menu_1130233529_0,-100,30,null,'link6')" onmouseout="MM_startTimeout();">产品展示</a></td>
+                                    <td width="75" align="center" valign="middle" class="nvbd"><a href="/News/Index" name="link7" class="nv" id="link3" onmouseover="MM_showMenu(window.mm_menu_1130234253_0,-50,30,null,'link7')" onmouseout="MM_startTimeout();">新闻咨询</a></td>                                    
+                                    <td width="75" align="center" valign="middle" class="nvbd"><a href="/FeedBack/Index" class="nv">在线留言</a></td>
+                                    <td width="75" align="center" valign="middle" class="vb"><a href="/Contact/Index" class="nv">联系我们</a></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="26" bgcolor="c5e4ff">&nbsp;</td>
+            </tr>
+        </table>
+        <table width="1005" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td height="214">
+                    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1005" height="214">
+                        <param name="movie" value="flash/banner.swf" />
+                        <param name="quality" value="high" />
+                        <param name="wmode" value="value=&quot;transparent&quot;" />
+                        <embed src="/flash/banner.swf" width="1005" height="214" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="value=&quot;transparent&quot;"></embed>
+                    </object>
+                </td>
+            </tr>
+        </table>
+
+        @RenderBody()
+
+    </div>
+</body>
+@RenderSection("scripts", required: false)
+</html>
+
