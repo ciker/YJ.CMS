@@ -1,7 +1,5 @@
 1、使用autoFac创建Ibll实例..
 
-baseController里通过反射拿到所有的bll实例
-
 登陆页--vm注解--画验证码---点击切换使用Url.Action()---登陆逻辑---menu分部类实体		Remote/DataType
 
 分类新增---编写分页条---新增用户功能：Remote()特性校验用户名---新闻列表---新闻编辑---KindEditor
